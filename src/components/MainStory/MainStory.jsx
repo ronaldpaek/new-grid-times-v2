@@ -38,12 +38,18 @@ const Heading = styled.h2`
   font-size: 1.5rem;
   font-weight: var(--font-weight-bold);
   line-height: 1.3;
+  text-wrap: balance;
 `;
 
 const Abstract = styled.p`
   font-size: 1rem;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
   white-space: pre-wrap;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 8;
+  overflow: hidden;
+
 `;
 
 const Location = styled.span`
