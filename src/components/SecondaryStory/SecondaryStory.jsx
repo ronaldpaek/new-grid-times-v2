@@ -23,8 +23,6 @@ const Wrapper = styled.article`
   gap: 4px 16px;
   grid-template-columns: 120px 1fr;
   color: var(--color-gray-900);
-  padding-top: 16px;
-  padding-bottom: 16px;
 
   @media ${QUERIES.tabletOnly} {
     grid-template-areas:
@@ -56,7 +54,6 @@ const Heading = styled.h2`
 const Abstract = styled.p`
   grid-area: abstract;
   font-size: 1rem;
-  align-self: start;
   white-space: pre-wrap;
   display: -webkit-box;
   -webkit-box-orient: vertical;
