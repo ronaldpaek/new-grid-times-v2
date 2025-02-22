@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { QUERIES } from '../../constants';
+
 const SecondaryStory = ({ id, title, image, location, abstract }) => {
   return (
     <a href={`/story/${id}`}>
@@ -24,8 +26,12 @@ const Wrapper = styled.article`
   padding-top: 16px;
   padding-bottom: 16px;
 
-  & {
-    border-bottom: 1px solid var(--color-gray-300);
+  @media ${QUERIES.tabletOnly} {
+    grid-template-areas:
+      'image'
+      'heading'
+      'abstract';
+    grid-template-columns: 1fr;
   }
 `;
 
@@ -50,12 +56,14 @@ const Heading = styled.h2`
 const Abstract = styled.p`
   grid-area: abstract;
   font-size: 1rem;
+  align-self: start;
   white-space: pre-wrap;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
+
+  /* Necessary for line-clamping */
   overflow: hidden;
-  text-wrap: pretty;
 `;
 
 export default SecondaryStory;
